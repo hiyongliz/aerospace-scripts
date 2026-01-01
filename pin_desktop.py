@@ -2,7 +2,7 @@
 import argparse
 import subprocess
 
-WINDOW_KEYWORDS: list[str] = ["WeChat", "钉在桌面上", "| 企业微信          | 企业微信"]
+WINDOW_KEYWORDS: list[str] = ["WeChat", "钉在桌面上", "| 企业微信          | 企业微信", "图片查看器"]
 
 
 def main(workspace: str) -> None:
