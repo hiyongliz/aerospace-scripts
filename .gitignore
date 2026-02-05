@@ -1,0 +1,27 @@
+# 日志文件
+*.log
+
+# 用户配置文件
+config.json
+
+# Jujutsu VCS
+.jj/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
