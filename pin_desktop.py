@@ -4,6 +4,7 @@ import json
 import logging
 import subprocess
 import sys
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 DEFAULT_KEYWORDS: list[str] = ["WeChat", "钉在桌面上", "| 企业微信          | 企业微信", "图片查看器"]
@@ -13,7 +14,10 @@ LOG_PATH = Path(__file__).parent / "pin_desktop.log"
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[logging.FileHandler(LOG_PATH, encoding="utf-8"), logging.StreamHandler(sys.stdout)],
+    handlers=[
+        RotatingFileHandler(LOG_PATH, maxBytes=10 * 1024 * 1024, backupCount=5, encoding="utf-8"),
+        logging.StreamHandler(sys.stdout),
+    ],
 )
 logger = logging.getLogger(__name__)
 
